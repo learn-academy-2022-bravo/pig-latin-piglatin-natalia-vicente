@@ -35,11 +35,20 @@ class App extends Component {
 
       // your code here!
 
-      // Remember: console.log is your friend :)
+      let newWord = ""
+      const translatePigLatin = (string) => {
+        if (vowelsArray.indexOf(string[0]) > -1) {
+          newWord = string + "way" ;
+          return newWord
+        }
+      }
+      console.log(newWord(translatePigLatin))
 
+      // Remember: console.log is your friend :)
+ 
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
+      return translatedWords
     })
 
 
@@ -99,7 +108,7 @@ class App extends Component {
           <button onClick={this.restartGame}>Clear</button>
         </div>
         <p>{this.state.phraseTranslated}</p>
-        <footer>Coded by ~your name here~</footer>
+        <footer>Coded by Natalia and Vicente </footer>
       </>
     )
   }
