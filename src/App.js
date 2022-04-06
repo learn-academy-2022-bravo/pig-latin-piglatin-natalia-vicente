@@ -34,21 +34,36 @@ class App extends Component {
       console.log("vowelsArray:", vowelsArray)
 
       // your code here!
+//Create a new vairable- newWord to store new string inputted by user
+//Create a conditional statement to identify the first vowel in the string
+//First part of conditional will address if a word starts with a vowel
+//Call vowelsArray and use indexOf the currentWord indexed at 0 to identify the first vowel
+//If condition is true return currentWord + "way"
+//Create an else statement to address if the word begins with a consonant
+//Create new variable to identify index of first vowels
+//Create new variable to identify everything after the first vowel
+//Assign newWord to equal the string after the first vowel added with the first letters and the first vowel added to "ay"
+//Returned newWord
 
-      let newWord = ""
-      const translatePigLatin = (string) => {
-        if (vowelsArray.indexOf(string[0]) > -1) {
-          newWord = string + "way" ;
-          return newWord
-        }
-      }
-      console.log(newWord(translatePigLatin))
+          let newWord = "";
+
+          if (vowelsArray.indexOf(currentWord[0]) > -1) {
+              newWord = currentWord + "way";
+              return newWord;
+          } else {
+              let firstVowel = currentWord.match(/[aeiou]/) || 0;
+              let vowel = currentWord.indexOf(firstVowel[0]);
+              newWord = currentWord.substring(vowel) + currentWord.substring(0, vowel) + "ay";
+              return newWord;
+          }
+
+      // console.log(newStr)
 
       // Remember: console.log is your friend :)
- 
+
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return translatedWords
+      return newWord
     })
 
 
